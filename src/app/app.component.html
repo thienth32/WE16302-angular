@@ -1,0 +1,24 @@
+<div class="container">
+    <table class="table table-hover">
+        <thead>
+            <th>Mã Số</th>
+            <th>Tên</th>
+            <th>Ảnh</th>
+            <th>Giới Tính</th>
+            <th></th>
+        </thead>
+        <tbody *ngIf="heroes.length > 0">
+            <tr *ngFor="let item of heroes">
+                <td>{{item.code}}</td>
+                <td>{{item.name}}</td>
+                <td>
+                    <img [src]="item.avatar" width="200">
+                </td>
+                <td>{{item.gender}}</td>
+                <td>
+                    <button (click)="remove(item)" class="btn btn-sm btn-danger">Xóa</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  heroes: Array<object> = [
+  heroes: Array<any> = [
     {
       code: "sgk",
       name: "Songoku",
@@ -20,10 +20,14 @@ export class AppComponent {
       gender: "Nam"
     }
   ];
-  formHero: object = {
+  formHero: any = {
     code: "",
     name: "",
     avatar: "",
     gender: ""
   };
+
+  remove(item: any){
+    console.log(item);
+  }
 }
