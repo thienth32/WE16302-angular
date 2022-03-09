@@ -6,6 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  // tạo 1 danh sách emenies gồm các object 
+  // có thuộc tính: code, name, avatar, heathling (số)
+  // amor (giáp)
+  // hiển thị danh sách enemies ở phía dưới của danh sách heroes
+  // thực hiện chức năng xóa enemies
+
   heroes: Array<any> = [
     {
       code: "sgk",
@@ -27,7 +33,7 @@ export class AppComponent {
     gender: ""
   };
 
-  remove(item: any){
-    console.log(item);
+  remove(hero: any){
+    this.heroes = this.heroes.filter(item => item.code != hero.code);
   }
 }
