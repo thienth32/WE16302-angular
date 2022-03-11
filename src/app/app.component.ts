@@ -39,10 +39,20 @@ export class AppComponent {
 
   submitForm(){
     const newHero = {...this.formHero};
-    // tìm xem item ở form đã xuất hiện ở trong danh sách heroes hay chưa
-    // nếu chưa xuất hiện thì thêm mới (push)
-    // nếu có rồi thì cập nhật 
-    this.heroes.push(newHero);
+    let index = -1;
+    this.heroes.forEach((v, i) => {
+      if(v.code == newHero.code){
+        index = i;
+        return;
+      }
+    });
+    if(index == -1){
+      this.heroes.push(newHero);
+    }else{
+      this.heroes[index] = newHero;
+    }
+    
+    
     this.formHero = {
       code: "",
       name: "",
