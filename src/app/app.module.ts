@@ -6,13 +6,11 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './pages/login/login.component';
 import { FormsModule } from '@angular/forms';
-import { ThienthPipe } from './pipes/thienth.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    ThienthPipe
   ],
   imports: [
     BrowserModule,

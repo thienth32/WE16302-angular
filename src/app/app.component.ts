@@ -30,10 +30,28 @@ export class AppComponent {
     code: "",
     name: "",
     avatar: "",
-    gender: ""
+    gender: "Nữ"
   };
 
   remove(hero: any){
     this.heroes = this.heroes.filter(item => item.code != hero.code);
+  }
+
+  submitForm(){
+    const newHero = {...this.formHero};
+    // tìm xem item ở form đã xuất hiện ở trong danh sách heroes hay chưa
+    // nếu chưa xuất hiện thì thêm mới (push)
+    // nếu có rồi thì cập nhật 
+    this.heroes.push(newHero);
+    this.formHero = {
+      code: "",
+      name: "",
+      avatar: "",
+      gender: "nữ"
+    };
+  }
+
+  update(item:any){
+    this.formHero = {...item};
   }
 }
