@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class AppComponent implements OnInit{
   heroes: Array<any> = [];
   formHero: any = {
-    code: "",
+    id: "",
     name: "",
     avatar: "",
     gender: "Nữ"
@@ -21,28 +21,34 @@ export class AppComponent implements OnInit{
         })
   }
 
-  
-
   remove(hero: any){
-    this.heroes = this.heroes.filter(item => item.code != hero.code);
+    this.http.delete<any>(`http://localhost:3000/heroes/${hero.id}`)
+      .subscribe(data => {
+        this.heroes = this.heroes.filter(item => item.id != hero.id);
+      })
+    
   }
 
   submitForm(){
     const newHero = {...this.formHero};
-    let index = -1;
-    this.heroes.forEach((v, i) => {
-      if(v.code == newHero.code){
-        index = i;
-        return;
-      }
-    });
-    if(index == -1){
-      this.heroes.push(newHero);
+
+    if(newHero.id == ""){
+      this.http.post<any>("http://localhost:3000/heroes", newHero)
+        .subscribe(data => {
+          this.heroes.push(data);
+        })
     }else{
-      this.heroes[index] = newHero;
+      this.http.put<any>(`http://localhost:3000/heroes/${newHero.id}`, newHero)
+        .subscribe(data => {
+          let index = -1;
+          this.heroes.forEach((item, i) => {
+            if(item.id == newHero.id){
+              index = i;
+            }
+          })
+          this.heroes[index] = data;
+        });
     }
-    
-    
     this.formHero = {
       code: "",
       name: "",
