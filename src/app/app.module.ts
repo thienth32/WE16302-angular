@@ -7,12 +7,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './pages/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { GenderPipe } from './helpers/pipes/gender.pipe';
+import { HeroFormComponent } from './components/hero-form/hero-form.component';
+import { HeroItemComponent } from './components/hero-item/hero-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     GenderPipe,
+    HeroFormComponent,
+    HeroItemComponent,
   ],
   imports: [
     BrowserModule,

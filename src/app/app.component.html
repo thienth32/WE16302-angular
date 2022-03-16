@@ -2,14 +2,8 @@
     <div class="row">
         <div class="col-6">
             <h3>Form Hero</h3>
-            {{price | currency: "VND"}}
-            <br>
-            {{birthDate}}
-            <br>
-            {{birthDate | date: 'dd/MM/YYY'}}
-            <br>
-            {{formHero | json}}
-            <div class="form-group">
+            <app-hero-form></app-hero-form>
+            <!-- <div class="form-group">
                 <label for="">Mã số</label>
                 <input disabled type="text" [(ngModel)]="formHero.id" class="form-control">
             </div>
@@ -30,7 +24,7 @@
             </div>
             <div class="d-flex justify-content-end mt-3">
                 <button (click)="submitForm()" class="btn btn-sm btn-success">Lưu</button>
-            </div>
+            </div> -->
         </div>
     </div>
     <table class="table table-hover">
@@ -42,18 +36,10 @@
             <th></th>
         </thead>
         <tbody *ngIf="heroes.length > 0">
-            <tr *ngFor="let item of heroes">
-                <td>{{item.id}}</td>
-                <td>{{item.name}}</td>
-                <td>
-                    <img [src]="item.avatar" width="200">
-                </td>
-                <td>{{item.gender | gender}}</td>
-                <td>
-                    <button (click)="update(item)" class="btn btn-sm btn-info">Sửa</button>
-                    <button (click)="remove(item)" class="btn btn-sm btn-danger">Xóa</button>
-                </td>
-            </tr>
+            <ng-container *ngFor="let item of heroes">
+                <hero-item (removeHero)="remove($event)"  [herodata]="item"></hero-item>
+            </ng-container>
+            
         </tbody>
     </table>
 </div>
