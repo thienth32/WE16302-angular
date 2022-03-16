@@ -13,6 +13,8 @@ export class AppComponent implements OnInit{
     avatar: "",
     gender: "Nữ"
   };
+  birthDate = "2022-03-16";
+  price = 1500;
   constructor(private http: HttpClient){}
   ngOnInit(): void {
     this.http.get<any>("http://localhost:3000/heroes")

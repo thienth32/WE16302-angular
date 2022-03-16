@@ -4,14 +4,15 @@
       "id": 1,
       "name": "Songoku",
       "avatar": "https://i.pinimg.com/736x/d7/bd/23/d7bd2389fd03889edc309504c3377409.jpg",
-      "gender": "Nam",
+      "gender": 1,
       "attack": 50
     },
     {
       "id": 3,
       "name": "spider man",
       "avatar": "https://image.thanhnien.vn/w660/Uploaded/2022/mtfqu/2021_08_26/spider-man_mnry.jpg",
-      "gender": "Nam"
+      "gender": 2,
+      "attack": 150
     }
   ],
   "enemies": []

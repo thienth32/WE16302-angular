@@ -1,0 +1,3 @@
+pipe => tính năng để giúp format lại giá trị hiển thị cho dữ liệu
+có thể tự tạo ra pipe mới để sử dụng trong dự án
+ng g pipe tên pipe
