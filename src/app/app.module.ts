@@ -12,6 +12,7 @@ import { HomeComponent } from './screens/home/home.component';
 import { LoginComponent } from './screens/login/login.component';
 import { SubjectListComponent } from './screens/subject-list/subject-list.component';
 import { QuizComponent } from './screens/quiz/quiz.component';
+import { HomeLayoutComponent } from './layouts/home-layout/home-layout.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { QuizComponent } from './screens/quiz/quiz.component';
     HomeComponent,
     SubjectListComponent,
     QuizComponent,
+    HomeLayoutComponent,
   ],
   imports: [
     BrowserModule,
