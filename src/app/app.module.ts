@@ -10,6 +10,8 @@ import { HeroFormComponent } from './components/hero-form/hero-form.component';
 import { HeroItemComponent } from './components/hero-item/hero-item.component';
 import { HomeComponent } from './screens/home/home.component';
 import { LoginComponent } from './screens/login/login.component';
+import { SubjectListComponent } from './screens/subject-list/subject-list.component';
+import { QuizComponent } from './screens/quiz/quiz.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { LoginComponent } from './screens/login/login.component';
     HeroFormComponent,
     HeroItemComponent,
     HomeComponent,
+    SubjectListComponent,
+    QuizComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -8,12 +8,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router: ActivatedRoute) { }
-  id: number = 0;
+  constructor() { }
   ngOnInit(): void {
-    this.router.params.subscribe(par => {
-      this.id = Number(par['id']);
-    })
+    
   }
+  
 
 }

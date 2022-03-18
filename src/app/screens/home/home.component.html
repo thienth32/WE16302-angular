@@ -1,5 +1,5 @@
 <p>home works!</p>
 
 <p *ngFor="let item of listSubjects">
-    <a [routerLink]="'/login/' + item.id">Trang đăng nhập</a>
+    <a [routerLink]="'/quiz/' + item.id">{{item.name}}</a>
 </p>
