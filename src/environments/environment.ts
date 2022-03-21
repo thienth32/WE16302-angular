@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  GOOGLE_CLIENT_ID: "774694123269-21p8lvg2e60jfrnm2hiiivlc6hs7ii2l.apps.googleusercontent.com"
+  // GOOGLE_CLIENT_ID: "774694123269-21p8lvg2e60jfrnm2hiiivlc6hs7ii2l.apps.googleusercontent.com"
 };
 
 /*
