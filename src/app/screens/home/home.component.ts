@@ -8,16 +8,21 @@ import { StudentService } from 'src/app/services/student.service';
 })
 export class HomeComponent implements OnInit {
   listStudents: Array<any> = [];
-  constructor(private studentService: StudentService) { }
   
+  constructor(private studentService: StudentService) { }
+  keyword: string = "";
   ngOnInit(): void {
     this.getStudent();
   }
-  getStudent(){
-    this.studentService.list()
+  getStudent(searchKeyword: string = ""){
+    this.studentService.list(searchKeyword)
       .subscribe(data => {
         this.listStudents = data;
       })
+  }
+
+  search(){
+    this.getStudent(this.keyword);
   }
 
 }

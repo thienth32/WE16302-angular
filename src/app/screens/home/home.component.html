@@ -1,6 +1,7 @@
 
-<input type="text">
+<input type="text" [(ngModel)]="keyword" (keyup)="search()">
 <br>
 <ul>
     <li *ngFor="let s of listStudents">{{s.email}}</li>
 </ul>
+
