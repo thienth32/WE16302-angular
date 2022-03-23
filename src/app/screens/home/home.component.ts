@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StudentService } from 'src/app/services/student.service';
 
 @Component({
   selector: 'app-home',
@@ -6,23 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
-  listSubjects = [
-    {
-      id: 1,
-      name: "front end framework"
-    },
-    {
-      id: 2,
-      name: "Laravel"
-    },
-    {
-      id: 3,
-      name: "PHP2"
-    }
-  ]
+  listStudents: Array<any> = [];
+  constructor(private studentService: StudentService) { }
+  
   ngOnInit(): void {
+    this.getStudent();
+  }
+  getStudent(){
+    this.studentService.list()
+      .subscribe(data => {
+        this.listStudents = data;
+      })
   }
 
 }
