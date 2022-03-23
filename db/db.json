@@ -55,6 +55,16 @@
       "birthday": "1990-12-31T17:00:00.000Z",
       "schoolfee": 100,
       "id": 5
+    },
+    {
+      "fullname": "Trương Văn Hân",
+      "username": "hantv",
+      "email": "hantv@fpt.edu.vn",
+      "password": "123456",
+      "gender": "false",
+      "birthday": "2022-03-01",
+      "schoolfee": 1999,
+      "id": 6
     }
   ],
   "subjects": [

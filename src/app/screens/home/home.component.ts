@@ -8,6 +8,15 @@ import { StudentService } from 'src/app/services/student.service';
 })
 export class HomeComponent implements OnInit {
   listStudents: Array<any> = [];
+  studentData = {
+    fullname: "",
+    username: "",
+    email: "",
+    password: "",
+    gender: "",
+    birthday: "",
+    schoolfee: 0,
+  }
   
   constructor(private studentService: StudentService) { }
   keyword: string = "";
@@ -23,6 +32,13 @@ export class HomeComponent implements OnInit {
 
   search(){
     this.getStudent(this.keyword);
+  }
+
+  addStudent(){
+    this.studentService.addNew(this.studentData)
+      .subscribe(newStudent => {
+        this.listStudents.push(newStudent);
+      });
   }
 
 }
