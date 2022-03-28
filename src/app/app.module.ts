@@ -49,10 +49,7 @@ import { environment } from 'src/environments/environment';
               environment.GOOGLE_CLIENT_ID
             )
           }
-        ],
-        onError: (err) => {
-          console.error(err);
-        }
+        ]
       } as SocialAuthServiceConfig,
     }
   ],

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { StudentService } from 'src/app/services/student.service';
 
 @Component({
   selector: 'app-home',
@@ -18,27 +17,27 @@ export class HomeComponent implements OnInit {
     schoolfee: 0,
   }
   
-  constructor(private studentService: StudentService) { }
+  constructor() { }
   keyword: string = "";
   ngOnInit(): void {
-    this.getStudent();
+    // this.getStudent();
   }
-  getStudent(searchKeyword: string = ""){
-    this.studentService.list(searchKeyword)
-      .subscribe(data => {
-        this.listStudents = data;
-      })
-  }
+  // getStudent(searchKeyword: string = ""){
+  //   this.studentService.list(searchKeyword)
+  //     .subscribe(data => {
+  //       this.listStudents = data;
+  //     })
+  // }
 
-  search(){
-    this.getStudent(this.keyword);
-  }
+  // search(){
+  //   this.getStudent(this.keyword);
+  // }
 
-  addStudent(){
-    this.studentService.addNew(this.studentData)
-      .subscribe(newStudent => {
-        this.listStudents.push(newStudent);
-      });
-  }
+  // addStudent(){
+  //   this.studentService.addNew(this.studentData)
+  //     .subscribe(newStudent => {
+  //       this.listStudents.push(newStudent);
+  //     });
+  // }
 
 }
