@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './helpers/auth.guard';
 import { HomeLayoutComponent } from './layouts/home-layout/home-layout.component';
 import { HomeComponent } from './screens/home/home.component';
 import { LoginComponent } from './screens/login/login.component';
@@ -25,7 +26,8 @@ const routes: Routes = [
       }, 
       {
         path: 'quiz/:idmonhoc',
-        component: QuizComponent
+        component: QuizComponent,
+        canActivate: [AuthGuard]
       }
     ],
     // loadChildren
