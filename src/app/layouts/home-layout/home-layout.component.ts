@@ -13,6 +13,11 @@ export class HomeLayoutComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  isLoggedIn(): boolean{
+    
+    return this.authService.isLoggedIn();
+  }
+
   logout():void{
     this.authService.logout();
   }

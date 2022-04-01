@@ -1,2 +1,14 @@
-<p>quiz works!</p>
-{{id}}
+<div class="row">
+    <div *ngFor="let q of lstQuestions; index as i" class="col-6">
+        <h4>Câu hỏi {{i+1}}: {{q.Text}}</h4>
+        <ul>
+            <li *ngFor="let an of q.Answers">
+                <input (change)="selectAnswer(q.Id, an.Id)" id="anw_{{an.Id}}" type="radio" [name]="q.Id" [value]="an.Id"> 
+                <label for="anw_{{an.Id}}">{{an.Text}}</label>
+            </li>
+        </ul>
+    </div>
+    <div class="col-12 d-flex justify-content-center mt-3">
+        <button (click)="submitExcercise()" class="btn btn-primary">Nộp bài</button>
+    </div>
+</div>

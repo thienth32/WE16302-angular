@@ -6,10 +6,16 @@
       "email": "thienth@fpt.edu.vn",
       "googleId": "113371492414931328821",
       "avatar": "https://lh3.googleusercontent.com/a-/AOh14Ghb4FVOe6nNmroH4IA8W4DNWMXSX_X8y4FCh3z1=s96-c",
-      "marks": [],
-      "roles": [{
+      "marks": [
+        {
+          "subject": "ADBS",
+          "score": "2.00"
+        }
+      ],
+      "roles": [
+        {
           "name": "admin"
-        }, 
+        },
         {
           "name": "member"
         }

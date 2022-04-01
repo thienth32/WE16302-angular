@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SubjectService } from '../../services/subject.service';
 
 @Component({
   selector: 'app-home',
@@ -6,38 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  listStudents: Array<any> = [];
-  studentData = {
-    fullname: "",
-    username: "",
-    email: "",
-    password: "",
-    gender: "",
-    birthday: "",
-    schoolfee: 0,
+  
+  subjects: Array<any> = [];
+  constructor(private subjectService: SubjectService) { }
+  ngOnInit(): void {
+    this.listSubject();
+  }
+
+  listSubject(){
+    this.subjectService.list()
+      .subscribe(data => {
+        this.subjects = data;
+      })
   }
   
-  constructor() { }
-  keyword: string = "";
-  ngOnInit(): void {
-    // this.getStudent();
-  }
-  // getStudent(searchKeyword: string = ""){
-  //   this.studentService.list(searchKeyword)
-  //     .subscribe(data => {
-  //       this.listStudents = data;
-  //     })
-  // }
-
-  // search(){
-  //   this.getStudent(this.keyword);
-  // }
-
-  // addStudent(){
-  //   this.studentService.addNew(this.studentData)
-  //     .subscribe(newStudent => {
-  //       this.listStudents.push(newStudent);
-  //     });
-  // }
 
 }
